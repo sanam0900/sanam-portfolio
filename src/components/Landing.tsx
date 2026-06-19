@@ -1,8 +1,41 @@
-import { PropsWithChildren } from "react";
-import { TbDownload } from "react-icons/tb";
+import { PropsWithChildren, useState } from "react";
+import { TbDownload, TbX, TbEye } from "react-icons/tb";
 import "./styles/Landing.css";
 
+const CVModal = ({ onClose }: { onClose: () => void }) => (
+  <div className="cv-modal-overlay" onClick={onClose}>
+    <div className="cv-modal" onClick={(e) => e.stopPropagation()}>
+      <div className="cv-modal-header">
+        <span>Sanampreet_Singh_CV.pdf</span>
+        <div className="cv-modal-actions">
+          <a
+            href="/Sanampreet_Singh.pdf"
+            download="Sanampreet_Singh_CV.pdf"
+            className="cv-modal-download"
+            data-cursor="disable"
+          >
+            <TbDownload /> Download
+          </a>
+          <button className="cv-modal-close" onClick={onClose} data-cursor="disable">
+            <TbX />
+          </button>
+        </div>
+      </div>
+      <div className="cv-modal-body">
+        <iframe
+          src="/Sanampreet_Singh.pdf"
+          title="Sanampreet Singh CV"
+          width="100%"
+          height="100%"
+        />
+      </div>
+    </div>
+  </div>
+);
+
 const Landing = ({ children }: PropsWithChildren) => {
+  const [showCV, setShowCV] = useState(false);
+
   return (
     <>
       <div className="landing-section" id="landingDiv">
@@ -25,20 +58,19 @@ const Landing = ({ children }: PropsWithChildren) => {
               <div className="landing-h2-info">Automation</div>
               <div className="landing-h2-info-1">Cloud</div>
             </h2>
-            <a
+            <button
               className="landing-cv-btn"
-              href="/Sanampreet_Singh.pdf"
-              download="Sanampreet_Singh_CV.pdf"
-              target="_blank"
-              rel="noreferrer"
+              onClick={() => setShowCV(true)}
               data-cursor="disable"
             >
-              <TbDownload /> Download CV
-            </a>
+              <TbEye /> View CV
+            </button>
           </div>
         </div>
         {children}
       </div>
+
+      {showCV && <CVModal onClose={() => setShowCV(false)} />}
     </>
   );
 };
