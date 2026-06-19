@@ -28,6 +28,7 @@ const Landing = ({ children }: PropsWithChildren) => {
             <a
               className="landing-cv-btn"
               href="/Sanampreet_Singh.pdf"
+              download="Sanampreet_Singh_CV.pdf"
               target="_blank"
               rel="noreferrer"
               data-cursor="disable"

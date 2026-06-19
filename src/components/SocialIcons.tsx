@@ -69,6 +69,7 @@ const SocialIcons = () => {
       <a
         className="resume-button"
         href="/Sanampreet_Singh.pdf"
+        download="Sanampreet_Singh_CV.pdf"
         target="_blank"
         rel="noreferrer"
       >
