@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
 :root {
   font-family: "Geist", sans-serif;
@@ -22,6 +22,7 @@
   --backgroundColor: #0a0e17;
   --vh: 100vh;
   --vh: 100svh;
+  --fontDisplay: "Space Grotesk", sans-serif;
 }
 
 h1,
@@ -30,7 +31,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Geist", sans-serif;
+  font-family: var(--fontDisplay), "Geist", sans-serif;
 }
 
 body {

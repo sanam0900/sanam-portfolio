@@ -5,32 +5,24 @@ import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
 const projects = [
   {
-    title: "CallHQ",
-    category: "Voice AI Calling Platform",
-    tools: "Voice AI, Calling Automation, CRM Integrations",
-    image: "/images/callhq.png",
-    link: "https://callhq.ai",
+    title: "S/4HANA Payroll Migration",
+    category: "End-to-End SAP Landscape Automation",
+    description:
+      "Automated the full migration of SAP Payroll from MaxDB to S/4HANA on HANA Cloud. Owned the entire pipeline — from landscape setup and OS-level file distribution to SAPHostAgent deployment, SLCON/SUM-driven upgrades, and post-installation ABAP configuration tasks. What was once days of manual ops became a single automated run.",
+    tools: "Python · Bash · Groovy · Jenkins · SAP S/4HANA · SUM · SLCON · SAPHostAgent · HANA Cloud",
+    impact: "70% faster provisioning",
+    image: "/images/project_migration.webp",
+    link: "https://www.linkedin.com/in/sanampreet3052/",
   },
   {
-    title: "Whatsapp Automation",
-    category: "WABA Application",
-    tools: "WhatsApp Business API, Workflow Automation, Notifications",
-    image: "/images/whatsapp.png",
-    link: "https://whatsapp.callhq.ai",
-  },
-  {
-    title: "Broki",
-    category: "Real Estate Platform for FnB Industry",
-    tools: "Property Discovery, Lead Management, Marketplace Workflows",
-    image: "/images/broki.png",
-    link: "https://broki.in",
-  },
-  {
-    title: "Orrdr.com",
-    category: "Ecommerce Platform and Mobile App",
-    tools: "Ecommerce, Mobile Experience, Order Management",
-    image: "/images/orrdr.png",
-    link: "https://orrdr.com",
+    title: "VM Demand Forecasting",
+    category: "Cost Optimisation & Capacity Planning",
+    description:
+      "Built an ML-driven forecasting system to predict VM demand across all SAP datacenters and regions. Compared multiple time-series models (ARIMA and others) to identify the most accurate fit per region. The system surfaces the least-utilised datacenters and generates advance reservation recommendations — preventing missed deadlines and eliminating unnecessary on-demand spend.",
+    tools: "Python · ARIMA · Time-Series Modelling · SAP Infrastructure APIs · Statistical Forecasting",
+    impact: "Reduced reservation cost & zero missed deadlines",
+    image: "/images/project_forecasting.webp",
+    link: "https://www.linkedin.com/in/sanampreet3052/",
   },
 ];
 
@@ -106,9 +98,15 @@ const Work = () => {
                         <p className="carousel-category">
                           {project.category}
                         </p>
+                        <p className="carousel-description">
+                          {project.description}
+                        </p>
                         <div className="carousel-tools">
-                          <span className="tools-label">Tools & Features</span>
+                          <span className="tools-label">Tools & Stack</span>
                           <p>{project.tools}</p>
+                        </div>
+                        <div className="carousel-impact">
+                          <span>⚡ {project.impact}</span>
                         </div>
                       </div>
                     </div>

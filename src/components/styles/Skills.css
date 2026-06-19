@@ -1,0 +1,137 @@
+.skills-section {
+  padding: 80px 0;
+  background-color: var(--backgroundColor);
+}
+
+.skills-title {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 40px;
+}
+
+/* ── Tabs ── */
+.skills-tabs {
+  display: flex;
+  gap: 0;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 48px;
+  width: fit-content;
+}
+
+.skills-tab {
+  background: transparent;
+  border: none;
+  border-right: 1px solid #2a2a2a;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.skills-tab:last-child {
+  border-right: none;
+}
+
+.skills-tab:hover {
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.skills-tab-active {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #fff !important;
+  position: relative;
+}
+
+.skills-tab-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accentColor);
+}
+
+/* ── Grid ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 60px;
+}
+
+/* ── Individual skill row ── */
+.skill-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.skill-name {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.skill-pct {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--accentColor);
+  opacity: 0.8;
+}
+
+.skill-bar-bg {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accentColor), rgba(94, 234, 212, 0.5));
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Responsive ── */
+@media only screen and (max-width: 1024px) {
+  .skills-tabs {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .skills-tab {
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .skills-tab {
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+}
