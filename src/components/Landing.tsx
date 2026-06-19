@@ -1,4 +1,5 @@
 import { PropsWithChildren } from "react";
+import { TbDownload } from "react-icons/tb";
 import "./styles/Landing.css";
 
 const Landing = ({ children }: PropsWithChildren) => {
@@ -24,6 +25,15 @@ const Landing = ({ children }: PropsWithChildren) => {
               <div className="landing-h2-info">Automation</div>
               <div className="landing-h2-info-1">Cloud</div>
             </h2>
+            <a
+              className="landing-cv-btn"
+              href="/Sanampreet_Singh.pdf"
+              target="_blank"
+              rel="noreferrer"
+              data-cursor="disable"
+            >
+              <TbDownload /> Download CV
+            </a>
           </div>
         </div>
         {children}

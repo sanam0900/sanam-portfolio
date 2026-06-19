@@ -55,7 +55,7 @@ const Achievements = () => {
   }, []);
 
   return (
-    <div className="achievements-section section-container" ref={ref}>
+    <div className="achievements-section section-container section-fade section-visible" ref={ref}>
       <h3 className="title">By the Numbers</h3>
       <div className="achievements-grid">
         {stats.map((s) => (

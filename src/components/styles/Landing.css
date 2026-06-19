@@ -395,3 +395,31 @@ h2.landing-info-h2 {
     font-size: 75px;
   }
 }
+
+/* ── CV Download Button ── */
+.landing-cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+  padding: 10px 22px;
+  font-family: "Geist", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: var(--accentColor);
+  border: 1px solid var(--accentColor);
+  border-radius: 4px;
+  background: rgba(94, 234, 212, 0.05);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+
+.landing-cv-btn:hover {
+  background: rgba(94, 234, 212, 0.12);
+  box-shadow: 0 0 16px rgba(94, 234, 212, 0.2);
+  color: var(--accentColor);
+}

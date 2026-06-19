@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./styles/Skills.css";
 
 const skillCategories = [
@@ -58,9 +58,24 @@ const skillCategories = [
 
 const Skills = () => {
   const [active, setActive] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          ref.current?.classList.add("section-visible");
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="skills-section section-container">
+    <div className="skills-section section-container section-fade" id="skills" ref={ref}>
       <h3 className="skills-title">Technical Skills</h3>
 
       <div className="skills-tabs">
